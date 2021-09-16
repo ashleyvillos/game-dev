@@ -47,7 +47,7 @@ function inserLettersTable() {
     const table = document.getElementById('letters-table');
 
     const tableContents = [
-        ['A', 'B', 'C', 'D', 'E', 'F', 'Gem', 'H', 'I', 'J', 'KEN GWAPO', 'L', 'M'],
+        ['Ash', 'B', 'C', 'D', 'E', 'F', 'Gem', 'H', 'I', 'J', 'KEN GWAPO', 'L', 'M'],
         ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'ZZZ']
     ]
 
