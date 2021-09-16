@@ -51,6 +51,10 @@ function inserLettersTable() {
         ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'ZZZ']
     ]
 
+    //top student ken and pao
+
+
+
     for (let i = 0; i < tableContents.length; i++) {
         // insert row at end of table
         let row = table.insertRow(-1);
