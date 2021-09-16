@@ -50,6 +50,8 @@ function inserLettersTable() {
         ['Ash', 'B', 'C', 'D', 'E', 'F', 'Gem', 'H', 'I', 'J', 'KEN GWAPO', 'L', 'M'],
         ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'ZZZ']
     ]
+    
+    //Top student Ken
 
     for (let i = 0; i < tableContents.length; i++) {
         // insert row at end of table
