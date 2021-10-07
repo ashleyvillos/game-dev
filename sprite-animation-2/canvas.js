@@ -1,6 +1,6 @@
 let canvas = document.getElementById('canvas')
-canvas.width = window.innerWidth * 0.7;
-canvas.height = window.innerHeight * 0.9;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 let context = canvas.getContext("2d");
 
 const bg = new Background('sprites/runners/desert_BG.png', canvas.width, canvas.height);
