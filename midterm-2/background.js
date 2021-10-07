@@ -25,12 +25,14 @@ class Background {
 
             {
                 spritesheet : this.image3,
-                width : 9216,
+                // width : 9216,
+                width: 2400
             },
 
             {
                 spritesheet : this.image4,
-                width : 4372,
+                // width : 4372,
+                width: 2400
             }
         ]
 
@@ -43,10 +45,12 @@ class Background {
     }
 
     update() {
-        this.x -= this.speed
+        // this.x -= this.speed --> shortcut version of the code below
+        this.x = this.x - this.speed;
 
         if ((canvas.width - this.x >= this.images[this.currentImage].width) || this.stopMoving) {
-            this.x += this.speed
+            // this.x += this.speed
+            this.x = this.x + this.speed;
             this.stopMoving = true
         }
     }
@@ -54,6 +58,7 @@ class Background {
     nextBackground() {
         this.currentImage++
 
+        // to check if I exhausted all of the images
         if (this.currentImage >= this.images.length) {
             this.currentImage = 0
         }
@@ -64,10 +69,10 @@ class Background {
 
     draw() {
         context.drawImage(
-            this.images[this.currentImage].spritesheet,
-            this.x,
-            0,
-            this.images[this.currentImage].width,
+            this.images[this.currentImage].spritesheet, 
+            this.x, 
+            0, 
+            this.images[this.currentImage].width, 
             this.height
         );
     }

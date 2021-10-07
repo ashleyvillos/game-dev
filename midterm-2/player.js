@@ -6,7 +6,7 @@ class Player {
         this.x = posX
         this.y = posY
         this.originalX = posX;
-        this.originalY = posY;
+        // this.originalY = posY;
 
         this.frameCounter = 0;
         this.frameWidth = 448
@@ -16,7 +16,7 @@ class Player {
         this.gameFrame = 0;
         this.frameSpeed = 2;
         this.planeSpeed = 14;
-        this.nextRound = false;
+        this.nextRound = false; 
 
         this.movement = {
             LEFT : false,
@@ -33,13 +33,8 @@ class Player {
         }
     }
 
-    resetPosition() {
-        this.x = this.originalX
-        this.y = this.originalY
-        this.nextRound = false
-    }
-
     move(keyType, key) {
+        // hold
         if (keyType == 'keydown') {
             if (key == this.keyCodes.UP || key == 'w') {
                 this.movement.UP = true
@@ -62,6 +57,7 @@ class Player {
             }
         }
 
+        // release
         else if (keyType == 'keyup') {
             if (key == this.keyCodes.UP || key == 'w') {
                 this.movement.UP = false
@@ -85,25 +81,38 @@ class Player {
         }
     }
 
+    resetPosition() {
+        this.x = this.originalX
+        // this.y = this.originalY
+        this.nextRound = false;
+    }
+
     update() {
-        if (this.gameFrame % this.frameSpeed == 0) {
-            this.frameCounter = (this.frameCounter == 0) ? 1 : 0;
+        if (this.gameFrame % this.frameSpeed == 0) { 
+            // this.frameCounter = (this.frameCounter == 0) ? 1 : 0;
+            if (this.frameCounter == 0) {
+                this.frameCounter = 1;
+            }
+
+            else {
+                this.frameCounter = 0;
+            }
 
             if (this.movement.UP && this.y > 0) {
-                this.y -= this.planeSpeed
+                this.y = this.y - this.planeSpeed
             }
 
             if (this.movement.DOWN && (this.y + this.imageHeight) < canvas.height) {
-                this.y += this.planeSpeed
+                this.y = this.y + this.planeSpeed
             }
 
             if (this.movement.LEFT && this.x > 0) {
-                this.x -= this.planeSpeed
+                this.x = this.x - this.planeSpeed
             }
 
             if (this.movement.RIGHT) {
                 if ((this.x + this.imageWidth) < canvas.width) {
-                    this.x += this.planeSpeed
+                    this.x = this.x + this.planeSpeed
                 }
 
                 else {
